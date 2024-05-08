@@ -40,7 +40,7 @@ const App = () => {
   }
 
   return (
-    <div className='flex flex-col justify-center p-4 bg-gray-600 rounded-md shadow-md gap-y-9'>
+    <div className='flex flex-col justify-center p-4 bg-gray-600 rounded-md shadow-md gap-y-9 mx-auto w-1/2'>
       <h1 className='text-center text-white text-2xl font-semibold '>
         Formulario de Datos
       </h1>
