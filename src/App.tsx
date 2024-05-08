@@ -39,8 +39,13 @@ const App = () => {
     setFormDatos(initialData)
   }
 
+  const eliminaDato = (id: any) => {
+    const eliminar = datos.filter(datoID => datoID.id !== id)
+    setDatos(eliminar)
+  }
+
   return (
-    <div className='flex flex-col justify-center p-4 bg-gray-600 rounded-md shadow-md gap-y-9 mx-auto w-1/2'>
+    <div className='flex flex-col justify-center p-4 bg-gray-600 rounded-md shadow-md gap-y-9 mx-auto w-1/2 mt-10'>
       <h1 className='text-center text-white text-2xl font-semibold '>
         Formulario de Datos
       </h1>
@@ -57,14 +62,14 @@ const App = () => {
         <textarea name="descripcion" onChange={handleChange} value={formDatos.descripcion} placeholder='Descripción' className="mb-2 p-2 border rounded-md h-32" />
 
         <br />
-        <button onClick={handleClick} className='bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600'>
+        <button onClick={handleClick} className='bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 font-semibold'>
           Enviar
         </button>
       </form>
 
       <ul>
         {datos.map((data) => (
-          <Lista date={data} key={data.id}/>
+          <Lista date={data} key={data.id} click={() => { eliminaDato(data.id) }} />
         ))}
       </ul>
     </div>
